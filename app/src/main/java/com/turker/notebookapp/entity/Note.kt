@@ -5,13 +5,16 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Note(title: String, content : String) {
+class Note(title: String, content: String, imageUrl: String?) {
     @PrimaryKey(autoGenerate = true)
-    val ID: Int = 0
+    var ID: Int = 0
 
     @ColumnInfo(name = "title")
-    val title: String? = title
+    var title: String = title
 
     @ColumnInfo(name = "content")
-    val content: String? = content
+    var content: String = content
+
+    @ColumnInfo(name = "image_url")
+    var imageUrl: String? = imageUrl
 }
